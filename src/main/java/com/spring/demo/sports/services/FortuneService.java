@@ -1,2 +1,6 @@
-package com.spring.demo.sports.services;public class FortuneService {
+package com.spring.demo.sports.services;
+
+public interface FortuneService {
+
+    String getFortune();
 }
