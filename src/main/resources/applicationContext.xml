@@ -16,4 +16,9 @@
           class="com.spring.demo.sports.coaches.BaseballCoach">
         <constructor-arg ref="myFortune"/>
     </bean>
+
+    <bean id="myCricketCoach"
+          class="com.spring.demo.sports.coaches.CricketCoach">
+        <property name="fortuneService" ref="myFortune"/>
+    </bean>
 </beans>

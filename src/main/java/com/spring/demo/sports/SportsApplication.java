@@ -1,8 +1,6 @@
 package com.spring.demo.sports;
 
-import com.spring.demo.sports.coaches.BaseballCoach;
 import com.spring.demo.sports.coaches.Coach;
-import com.spring.demo.sports.coaches.TrackCoach;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,9 +14,16 @@ public class SportsApplication {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
+        // Constructor injection
         Coach coach = context.getBean("myCoach", Coach.class);
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyFortune());
+
+        // Setter injection
+        coach = context.getBean("myCricketCoach", Coach.class);
+        System.out.println(coach.getDailyWorkout());
+        System.out.println(coach.getDailyFortune());
+
         context.close();
     }
 
