@@ -7,10 +7,37 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
+    private String email;
+    private String team;
+
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        System.out.println("Setting email for cricket coach with: " + email);
+        this.email = email;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        System.out.println("Setting team for cricket coach with: " + team);
+        this.team = team;
+    }
 
     @Override
     public String getDailyWorkout() {

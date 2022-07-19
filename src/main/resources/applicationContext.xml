@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="application.properties"/>
     <bean id="myLoggerConfig" class="com.spring.demo.sports.config.MyLoggerConfig" init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE" />
         <property name="printedLoggerLevel" value="FINE"/>
@@ -20,5 +23,8 @@
     <bean id="myCricketCoach"
           class="com.spring.demo.sports.coaches.CricketCoach">
         <property name="fortuneService" ref="myFortune"/>
+
+        <property name="email" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
     </bean>
 </beans>
